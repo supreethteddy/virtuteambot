@@ -9,7 +9,7 @@ users = [
 
 def sign_in(user):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)  # Change to True if needed
+        browser = p.chromium.launch(headless=True)  # Headless for cloud deployment
         context = browser.new_context(
             permissions=["geolocation"],
             geolocation={"latitude": 12.9716, "longitude": 77.5946},
