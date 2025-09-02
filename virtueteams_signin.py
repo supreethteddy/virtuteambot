@@ -4,6 +4,7 @@ import time
 # List of users to auto-login and sign-in
 users = [
     {"name": "Supreeth", "email": "supreeth.girish@gmail.com", "password": "#Asd@12345"},
+    {"name": "Kavya", "email": "kavyaboostmysites@gmail.com", "password": "Iamwealthy@777"},
     # Add more users if needed
 ]
 
