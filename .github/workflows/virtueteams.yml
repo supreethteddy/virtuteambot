@@ -2,7 +2,9 @@ name: VirtuTeams Auto Sign-In
 on:
   schedule:
     # Runs every weekday (Monday-Friday) at 9:50 AM IST (4:20 AM UTC)
+    # Also runs at 9:55 AM IST (4:25 AM UTC) as backup
     - cron: '20 4 * * 1-5'
+    - cron: '25 4 * * 1-5'
   workflow_dispatch:  # Allow manual trigger for testing
 
 jobs:
