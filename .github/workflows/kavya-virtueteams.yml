@@ -1,9 +1,8 @@
-name: VirtuTeams Auto Sign-In
+name: Kavya VirtuTeams Sign-In
 on:
   schedule:
-    # Runs every weekday (Monday-Friday) at 9:40 AM IST (4:10 AM UTC)
-    # This accounts for GitHub Actions delay to ensure execution around 9:50 AM IST
-    - cron: '10 4 * * 1-5'
+    # Runs every weekday (Monday-Friday) at 9:35 AM IST (4:05 AM UTC)
+    - cron: '5 4 * * 1-5'
   workflow_dispatch:  # Allow manual trigger for testing
 
 jobs:
@@ -23,14 +22,14 @@ jobs:
           pip install playwright
           playwright install chromium
           
-      - name: Run VirtuTeams Sign-In
-        run: python3 virtueteams_signin.py
+      - name: Run Kavya Sign-In
+        run: python3 kavya_virtueteams.py
         
       - name: Upload screenshots as artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: virtueteams-screenshots
+          name: kavya-screenshots
           path: |
             *.png
           retention-days: 7
