@@ -13,24 +13,25 @@ echo "   UTC: $(date -u)"
 echo "   IST: $(TZ='Asia/Kolkata' date)"
 echo ""
 
-# Check if it's a weekday
+# Check if it's a weekday or Saturday
 WEEKDAY=$(date +%u)
-if [ "$WEEKDAY" -ge 1 ] && [ "$WEEKDAY" -le 5 ]; then
-    echo "✅ Today is a weekday (Day $WEEKDAY)"
+if [ "$WEEKDAY" -ge 1 ] && [ "$WEEKDAY" -le 6 ]; then
+    echo "✅ Today is a weekday or Saturday (Day $WEEKDAY)"
     echo "   Automation should run today!"
 else
-    echo "❌ Today is weekend (Day $WEEKDAY)"
-    echo "   No automation scheduled for weekends"
+    echo "❌ Today is Sunday (Day $WEEKDAY)"
+    echo "   No automation scheduled for Sundays"
 fi
 echo ""
 
 # Show schedule
 echo "📅 Automation Schedule:"
 echo "   9:25 AM IST - Schedule Verification"
-echo "   9:30 AM IST - Supreeth Sign-In (Primary)"
-echo "   9:32 AM IST - Supreeth Sign-In (Backup)"
-echo "   9:35 AM IST - Kavya Sign-In (Primary)"
-echo "   9:37 AM IST - Kavya Sign-In (Backup)"
+echo "   9:30 AM IST - Supreeth & Kavya Sign-In (Primary)"
+echo "   9:32 AM IST - Supreeth & Kavya Sign-In (Backup)"
+echo ""
+echo "📅 Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+echo "❌ No automation on Sundays"
 echo ""
 
 # Check if it's time for automation
@@ -38,7 +39,7 @@ CURRENT_HOUR=$(TZ='Asia/Kolkata' date +%H)
 CURRENT_MINUTE=$(TZ='Asia/Kolkata' date +%M)
 
 if [ "$CURRENT_HOUR" = "09" ]; then
-    if [ "$CURRENT_MINUTE" -ge 25 ] && [ "$CURRENT_MINUTE" -le 40 ]; then
+    if [ "$CURRENT_MINUTE" -ge 25 ] && [ "$CURRENT_MINUTE" -le 35 ]; then
         echo "🎯 AUTOMATION TIME!"
         echo "   The workflows should be running now or soon"
         echo "   Check GitHub Actions for status"
@@ -46,7 +47,7 @@ if [ "$CURRENT_HOUR" = "09" ]; then
         echo "⏰ Not automation time yet"
     fi
 else
-    echo "⏰ Not automation time (9:25-9:40 AM IST)"
+    echo "⏰ Not automation time (9:25-9:35 AM IST)"
 fi
 echo ""
 

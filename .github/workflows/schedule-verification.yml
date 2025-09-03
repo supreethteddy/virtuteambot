@@ -1,8 +1,8 @@
 name: Schedule Verification
 on:
   schedule:
-    # Runs every weekday (Monday-Friday) at 9:25 AM IST (3:55 AM UTC) to verify schedules
-    - cron: '55 3 * * 1-5'
+    # Runs every weekday (Monday-Friday) and Saturday at 9:25 AM IST (3:55 AM UTC) to verify schedules
+    - cron: '55 3 * * 1-6'
   workflow_dispatch:  # Allow manual trigger for testing
 
 jobs:
