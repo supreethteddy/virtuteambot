@@ -26,9 +26,11 @@ echo ""
 
 # Show schedule
 echo "📅 Automation Schedule:"
+echo "   9:00 AM IST - Kavya Sign-In (Primary)"
+echo "   9:02 AM IST - Kavya Sign-In (Backup)"
 echo "   9:25 AM IST - Schedule Verification"
-echo "   9:30 AM IST - Supreeth & Kavya Sign-In (Primary)"
-echo "   9:32 AM IST - Supreeth & Kavya Sign-In (Backup)"
+echo "   9:30 AM IST - Supreeth Sign-In (Primary)"
+echo "   9:32 AM IST - Supreeth Sign-In (Backup)"
 echo ""
 echo "📅 Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
 echo "❌ No automation on Sundays"
@@ -39,7 +41,7 @@ CURRENT_HOUR=$(TZ='Asia/Kolkata' date +%H)
 CURRENT_MINUTE=$(TZ='Asia/Kolkata' date +%M)
 
 if [ "$CURRENT_HOUR" = "09" ]; then
-    if [ "$CURRENT_MINUTE" -ge 25 ] && [ "$CURRENT_MINUTE" -le 35 ]; then
+    if [ "$CURRENT_MINUTE" -ge 0 ] && [ "$CURRENT_MINUTE" -le 35 ]; then
         echo "🎯 AUTOMATION TIME!"
         echo "   The workflows should be running now or soon"
         echo "   Check GitHub Actions for status"
@@ -47,7 +49,7 @@ if [ "$CURRENT_HOUR" = "09" ]; then
         echo "⏰ Not automation time yet"
     fi
 else
-    echo "⏰ Not automation time (9:25-9:35 AM IST)"
+    echo "⏰ Not automation time (9:00-9:35 AM IST)"
 fi
 echo ""
 
