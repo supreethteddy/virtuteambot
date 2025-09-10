@@ -1,0 +1,39 @@
+name: Darshan VirtuTeams Sign-In
+on:
+  schedule:
+    # Runs every weekday (Monday-Friday) and Saturday at 9:05 AM IST (3:35 AM UTC)
+    - cron: '35 3 * * 1-6'
+  workflow_dispatch:  # Allow manual trigger for testing
+
+jobs:
+  signin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10  # Set timeout to prevent hanging
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium
+          
+      - name: Run Darshan Sign-In
+        run: |
+          echo "🕐 Starting Darshan's VirtuTeams automation at $(TZ='Asia/Kolkata' date)"
+          python3 darshan_virtueteams.py
+          echo "✅ Darshan's automation completed at $(TZ='Asia/Kolkata' date)"
+        
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: darshan-screenshots
+          path: |
+            *.png
+          retention-days: 7
