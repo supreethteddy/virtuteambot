@@ -1,12 +1,9 @@
 from playwright.sync_api import sync_playwright
 import time
 
-# List of users to auto-login and sign-in
+# Darshan's credentials only
 users = [
-    {"name": "Supreeth", "email": "supreeth.girish@gmail.com", "password": "#Asd@12345"},
-    {"name": "Kavya", "email": "kavyaboostmysites@gmail.com", "password": "Iamwealthy@777"},
     {"name": "Darshan", "email": "Darshan@boostmysites.com", "password": "Darshan@123"},
-    # Add more users if needed
 ]
 
 def sign_in(user):
@@ -175,7 +172,6 @@ def sign_in(user):
             time.sleep(8)  # Keep browser open longer to see the result
             browser.close()
 
-# Run for each user
+# Run for Darshan
 for user in users:
     sign_in(user)
-
