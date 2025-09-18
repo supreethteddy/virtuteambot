@@ -1,0 +1,63 @@
+# VirtuTeams Control Panel - Git Ignore File
+
+# Database files (contains sensitive user data)
+virtueteams.db
+*.db
+
+# User credentials and sensitive data
+import_existing_users.py
+
+# Log files
+*.log
+virtueteams_auto_signin.log
+darshan_virtueteams.log
+
+# Screenshots (may contain sensitive information)
+*.png
+*.jpg
+*.jpeg
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.local
+
+# Flask instance folder
+instance/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
