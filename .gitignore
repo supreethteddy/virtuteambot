@@ -6,8 +6,6 @@ virtueteams.db
 
 # User credentials and sensitive data
 import_existing_users.py
-# Allow Reshab script (temporary - will be removed after commit)
-!reshab_virtueteams.py
 
 # Log files
 *.log
