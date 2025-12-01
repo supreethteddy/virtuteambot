@@ -1,10 +1,10 @@
 name: Supreeth VirtuTeams Sign-In
 on:
   schedule:
-    # Runs every weekday (Monday-Friday) and Saturday at 9:30 AM IST (4:00 AM UTC)
-    # Backup: Also runs at 9:32 AM IST (4:02 AM UTC) in case of delay
-    - cron: '0 4 * * 1-6'
-    - cron: '2 4 * * 1-6'
+    # Runs every weekday (Monday-Friday) and Saturday at 9:20 AM IST (3:50 AM UTC)
+    # Backup: Also runs at 9:22 AM IST (3:52 AM UTC) in case of delay
+    - cron: '50 3 * * 1-6'
+    - cron: '52 3 * * 1-6'
   workflow_dispatch:  # Allow manual trigger for testing
 
 jobs:
