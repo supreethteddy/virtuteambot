@@ -1,6 +1,6 @@
 # VirtuTeams Auto Sign-In Bot
 
-Automated browser bot that signs into VirtuTeams and clicks the "Sign In" button for time tracking every weekday at 9:50 AM IST.
+Automated browser bot that signs into VirtuTeams and clicks the "Sign In" button for time tracking. Supports multiple users with individual schedules and a web-based control panel for easy management.
 
 ## 🚀 Cloud Deployment Options
 
@@ -115,19 +115,46 @@ For GitHub Actions, edit the cron expression in `.github/workflows/virtueteams.y
 - Consider using 2FA if available
 - Monitor logs for any suspicious activity
 
-## 📅 Schedule Details
+## 📅 Current Schedule (IST)
 
-- **Days:** Monday, Tuesday, Wednesday, Thursday, Friday
-- **Time:** 9:50 AM IST (India Standard Time)
-- **Excludes:** Weekends (Saturday, Sunday)
-- **Timezone:** UTC+5:30 (IST)
+| User | Time | Days |
+|------|------|------|
+| Kavya | 9:00 AM | Monday-Saturday |
+| Darshan | 9:05 AM | Monday-Saturday |
+| Reshab | 9:15 AM | Monday-Saturday |
+| Supreeth | 9:20 AM | Monday-Saturday |
+
+**Timezone:** UTC+5:30 (IST)
 
 ## 🎯 Features
 
 - ✅ Automatic login to VirtuTeams
+- ✅ Multiple user support with individual schedules
+- ✅ Web-based control panel for user management
+- ✅ Date exclusion system (skip specific dates)
 - ✅ Location spoofing (Bangalore, India)
 - ✅ Smart button detection (4 different methods)
 - ✅ Screenshot capture for verification
 - ✅ Error handling and logging
-- ✅ Cloud deployment ready
+- ✅ Cloud deployment ready (GitHub Actions)
+- ✅ Local cron job support
 - ✅ Manual trigger capability
+- ✅ Real-time monitoring and logs
+
+## 🖥️ Web Control Panel
+
+A modern web-based control panel is available for managing all automation settings:
+
+**Features:**
+- Add/Edit/Delete users
+- Set custom login times
+- Toggle days on/off (Monday-Saturday)
+- Exclude specific dates
+- Test automation manually
+- View execution logs and screenshots
+
+**Start the control panel:**
+```bash
+./start_control_panel.sh
+# Then open http://localhost:5001 in your browser
+```
